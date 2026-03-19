@@ -4,7 +4,7 @@ import type { FormatHandler, SerializeOptions } from "../types.js";
 
 export const csvFormat: FormatHandler = {
   id: "csv",
-  extensions: [".csv", ".tsv"],
+  extensions: [".csv"],
   mimeTypes: ["text/csv"],
 
   parse(input: string): unknown {

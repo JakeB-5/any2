@@ -66,7 +66,11 @@ try {
       indent: parseInt(opts.indent, 10),
     });
   } else {
-    // Read from stdin
+    if (process.stdin.isTTY) {
+      console.error("Error: No input file provided and no data piped to stdin.");
+      console.error("Usage: any2 <file> --to <format> or echo data | any2 --to <format>");
+      process.exit(1);
+    }
     const content = readFileSync(0, "utf-8");
     result = convert(content, {
       to: toFormat,

@@ -2,7 +2,7 @@ import type { FormatHandler, SerializeOptions } from "../types.js";
 
 export const jsonFormat: FormatHandler = {
   id: "json",
-  extensions: [".json", ".jsonl"],
+  extensions: [".json"],
   mimeTypes: ["application/json"],
 
   parse(input: string): unknown {
